@@ -1,0 +1,32 @@
+# Output buildu (odtwarzalny przez `python build_podprojekt_b.py`).
+public/
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Lokalne / przejściowe
+*.tar.gz
+*.tmp
+.env
+.env.local
+
+# Sekrety i credentials (na wypadek pomylki)
+DOSTEP.md
+*credentials*
+*.key
+*.pem
