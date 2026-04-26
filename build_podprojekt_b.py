@@ -233,11 +233,11 @@ DOC_TEMPLATE = """<!DOCTYPE html>
   </main>
 
   <section class="doc-downloads" aria-label="{downloads_label}">
-    <a class="doc-download doc-download-docx" href="{slug}-{lang}.docx" download>
+    <a class="doc-download doc-download-docx" href="../{slug}-{lang}.docx" download>
       <span class="doc-download-icon" aria-hidden="true">DOCX</span>
       <span class="doc-download-label">{download_docx}</span>
     </a>
-    <a class="doc-download doc-download-pdf" href="{slug}-{lang}.pdf" download>
+    <a class="doc-download doc-download-pdf" href="../{slug}-{lang}.pdf" download>
       <span class="doc-download-icon" aria-hidden="true">PDF</span>
       <span class="doc-download-label">{download_pdf}</span>
     </a>
