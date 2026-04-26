@@ -8,9 +8,10 @@ Repozytorium jest gotowe do reużycia w kursach o innych zawodach, językach i m
 
 ## Status
 
-- **Część 1 (`build_podprojekt_b.py`)**: gotowe, używane produkcyjnie dla kursu „Praca w tartaku".
-- **Część 2 (deploy hubowy + indeks dokumentów)**: planowane.
-- **Część 3 (skill / plugin Claude Code dla pracowników Fundacji)**: planowane. Plugin poprowadzi pracownika przez cały proces tworzenia nowego kursu (research treści, redakcja, tłumaczenia, walidacja, deploy).
+- **Część 1 (`build_podprojekt_b.py` pipeline 50 MD do 150 plików)**: gotowe, używane produkcyjnie dla kursu „Praca w tartaku".
+- **Część 2 (`build_dokumenty_index()` w tym samym skrypcie)**: gotowe. Generuje 4 strony indeksu per język + root redirect (`dokumenty/{pl,en,es,uk}/index.html` plus `dokumenty/index.html`). Każda strona pokazuje 13 typów dokumentów posegregowanych w 3 fazach (B1 / B2 / B3) z linkami do trzech formatów na dokument (online, DOCX, PDF). Dokumenty dostępne tylko w niektórych językach (np. B3 #2 współorganizacja: PL + EN) renderują się w pozostałych językach jako notice z fallbackiem.
+- **Część 3 (deploy hubowy)**: planowane. Integracja z `prezentacje.m-b.legal/kurs-tartak/`, dodanie linku „Dokumenty kursu" w głównym menu hubu, deploy via tar+ssh.
+- **Część 4 (skill / plugin Claude Code dla pracowników Fundacji)**: planowane. Plugin poprowadzi pracownika przez cały proces tworzenia nowego kursu (research treści, redakcja, tłumaczenia, walidacja, deploy).
 
 ## Co to robi
 

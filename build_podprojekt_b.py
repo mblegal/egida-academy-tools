@@ -305,6 +305,66 @@ I18N = {
 
 LANG_NAMES = {"pl": "PL", "en": "EN", "es": "ES", "uk": "UK"}
 
+# i18n dla strony indeksu Pakietu B (dokumenty/{lang}/index.html).
+INDEX_I18N = {
+    "pl": {
+        "title": "Dokumenty kursu",
+        "intro": "Pakiet 13 typów dokumentów formalnych kursu „Praca w tartaku\": umowy, zaświadczenia, regulaminy, RODO, formularz rekrutacyjny, polityka reklamacji. Każdy dokument dostępny w czterech wersjach (PL / EN / ES / UK) i trzech formatach (web view, DOCX do edycji, PDF do druku).",
+        "open_online": "Otwórz online",
+        "open_online_aria": "Otwórz dokument online",
+        "fmt_docx_aria": "Pobierz DOCX",
+        "fmt_pdf_aria": "Pobierz PDF",
+        "phase_intro_b1": "Rdzeń prawny: umowa kursu z Kursantem oraz zaświadczenia potwierdzające odbywanie i ukończenie poszczególnych Modułów, całego Kursu i praktyki absolwenckiej.",
+        "phase_intro_b2": "Dokumenty kursanta: regulamin Kursu, klauzula informacyjna RODO i zgody, formularz rekrutacyjny.",
+        "phase_intro_b3": "Polityki i back-office: polityka reklamacji i odwołań, umowa współorganizacji Kursu pomiędzy Fundacją a Przedsiębiorcą.",
+        "available_only": "Dostępne w językach:",
+        "back_to_hub": "← Powrót do menu kursu",
+        "page_lang_aria": "Język strony",
+    },
+    "en": {
+        "title": "Course documents",
+        "intro": "Package of 13 types of formal documents for the course \"Sawmill Work\": agreements, certificates, regulations, GDPR, application form, complaints policy. Each document available in four language versions (PL / EN / ES / UK) and three formats (web view, editable DOCX, printable PDF).",
+        "open_online": "Open online",
+        "open_online_aria": "Open document online",
+        "fmt_docx_aria": "Download DOCX",
+        "fmt_pdf_aria": "Download PDF",
+        "phase_intro_b1": "Legal core: course agreement with the Course Participant and certificates confirming attendance and completion of individual Modules, the entire Course, and the graduate apprenticeship.",
+        "phase_intro_b2": "Participant documents: course regulations, GDPR information notice and consents, application form.",
+        "phase_intro_b3": "Policies and back-office: complaints and appeals policy, co-organization agreement between the Foundation and the Entrepreneur.",
+        "available_only": "Available in languages:",
+        "back_to_hub": "← Back to course menu",
+        "page_lang_aria": "Page language",
+    },
+    "es": {
+        "title": "Documentos del curso",
+        "intro": "Paquete de 13 tipos de documentos formales del curso „Trabajo en aserradero\": contratos, certificados, reglamentos, RGPD, formulario de admisión, política de reclamaciones. Cada documento disponible en cuatro versiones lingüísticas (PL / EN / ES / UK) y tres formatos (vista web, DOCX editable, PDF imprimible).",
+        "open_online": "Abrir en línea",
+        "open_online_aria": "Abrir documento en línea",
+        "fmt_docx_aria": "Descargar DOCX",
+        "fmt_pdf_aria": "Descargar PDF",
+        "phase_intro_b1": "Núcleo jurídico: contrato del curso con el Cursante y certificados que confirman la asistencia y la finalización de los Módulos individuales, del Curso completo y de las prácticas de graduado.",
+        "phase_intro_b2": "Documentos del cursante: reglamento del curso, cláusula informativa RGPD y consentimientos, formulario de admisión.",
+        "phase_intro_b3": "Políticas y back-office: política de reclamaciones y apelaciones, contrato de coorganización del Curso entre la Fundación y el Empresario.",
+        "available_only": "Disponible en idiomas:",
+        "back_to_hub": "← Volver al menú del curso",
+        "page_lang_aria": "Idioma de la página",
+    },
+    "uk": {
+        "title": "Документи курсу",
+        "intro": "Пакет із 13 типів формальних документів курсу „Робота на лісопилці\": договори, свідоцтва, регламенти, GDPR, анкета кандидата, політика розгляду скарг. Кожен документ доступний у чотирьох мовних версіях (PL / EN / ES / UK) і трьох форматах (вебперегляд, DOCX для редагування, PDF для друку).",
+        "open_online": "Відкрити онлайн",
+        "open_online_aria": "Відкрити документ онлайн",
+        "fmt_docx_aria": "Завантажити DOCX",
+        "fmt_pdf_aria": "Завантажити PDF",
+        "phase_intro_b1": "Правове ядро: договір курсу з Курсантом та свідоцтва, що підтверджують відвідування та завершення окремих Модулів, всього Курсу та випускницької практики.",
+        "phase_intro_b2": "Документи курсанта: регламент курсу, інформаційна клаузула GDPR та згоди, анкета кандидата.",
+        "phase_intro_b3": "Політики та бек-офіс: політика розгляду скарг та апеляцій, договір співорганізації Курсу між Фундацією та Підприємцем.",
+        "available_only": "Доступно мовами:",
+        "back_to_hub": "← Повернутися до меню курсу",
+        "page_lang_aria": "Мова сторінки",
+    },
+}
+
 
 # =====================================================================
 # Pomocnicze
@@ -544,6 +604,173 @@ def fmt_meta(metadata: dict) -> str:
     return "\n".join(pairs)
 
 
+INDEX_TEMPLATE = """<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f6f4ef">
+<meta name="page-context" content="dokumenty/{lang}">
+<title>{title} · Kurs tartakowy EGIDA</title>
+<link rel="stylesheet" href="../../assets/egida.css">
+<link rel="stylesheet" href="../../assets/dokument.css">
+<link rel="stylesheet" href="../../assets/dokumenty-index.css">
+<link rel="icon" type="image/png" href="../../assets/egida-logo-64.png">
+</head>
+<body>
+<div class="doc-wrap">
+  <header class="doc-header">
+    <a class="doc-logo" href="../../index.html" title="{back_to_hub}">
+      <img src="../../assets/egida-logo-wide-128.png" alt="Logo Fundacji EGIDA">
+    </a>
+    <div class="doc-header-body">
+      <div class="doc-breadcrumb">
+        <a href="../../index.html">Kurs tartakowy EGIDA</a> /
+        {title}
+      </div>
+      <h1 class="doc-title">{title}</h1>
+      <p class="docs-intro">{intro}</p>
+    </div>
+{lang_switch_html}
+  </header>
+
+  <main class="doc-content">
+{phases_html}
+  </main>
+
+  <footer class="doc-footer">
+    <span class="egida-mark">Fundacja EGIDA · Kurs „Praca w tartaku"</span>
+    <a href="../../index.html">{back_to_hub}</a>
+  </footer>
+</div>
+<script src="../../assets/chrome.js"></script>
+</body>
+</html>
+"""
+
+INDEX_REDIRECT = """<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Dokumenty kursu - EGIDA</title>
+<meta name="robots" content="noindex, nofollow">
+<script>
+(function(){
+  var lang = 'pl';
+  try {
+    var saved = localStorage.getItem('egida-kurs-lang');
+    if (saved && ['pl','en','es','uk'].indexOf(saved) !== -1) lang = saved;
+  } catch (e) {}
+  window.location.replace(lang + '/index.html');
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=pl/index.html"></noscript>
+</head>
+<body>
+<p>Loading documents... <a href="pl/index.html">click here if not redirected</a></p>
+</body>
+</html>
+"""
+
+
+def build_index_lang_switch(current_lang: str, page_lang_aria: str) -> str:
+    """Lang switch dla strony indeksu: linki do siostrzanych ../{lang}/index.html."""
+    parts = [f'    <nav class="doc-lang-switch" aria-label="{page_lang_aria}">']
+    for L in ("pl", "en", "es", "uk"):
+        is_current = (L == current_lang)
+        cls = ' class="on" aria-current="page"' if is_current else ""
+        href = "#" if is_current else f"../{L}/index.html"
+        parts.append(f'      <a data-lang="{L}" href="{href}"{cls} hreflang="{L}">{LANG_NAMES[L]}</a>')
+    parts.append("    </nav>")
+    return "\n".join(parts)
+
+
+def build_doc_card(doc: DocBuild, lang: str, idx_i18n: dict) -> str:
+    """Pojedyncza karta dokumentu w indeksie. Jesli `lang` jest dostepny: 3 linki (HTML/DOCX/PDF).
+    Jesli niedostepny (np. B3 #2 dla ES/UK): notice z lista dostepnych jezykow + linki do PL/EN.
+    """
+    labels = DOC_LABELS[doc.slug]
+    title = labels.get(lang) or labels.get("pl") or doc.slug
+
+    if lang in doc.langs:
+        html_url = f"../{doc.phase}/{doc.slug}/{lang}/index.html"
+        docx_url = f"../{doc.phase}/{doc.slug}/{doc.slug}-{lang}.docx"
+        pdf_url = f"../{doc.phase}/{doc.slug}/{doc.slug}-{lang}.pdf"
+        return f"""        <article class="docs-card" data-phase="{doc.phase}" data-slug="{doc.slug}">
+          <h3 class="docs-card-title">{title}</h3>
+          <div class="docs-card-actions">
+            <a class="docs-action docs-action-html" href="{html_url}" aria-label="{idx_i18n['open_online_aria']}: {title}">
+              <span class="docs-action-icon" aria-hidden="true">HTML</span>
+              <span class="docs-action-label">{idx_i18n['open_online']}</span>
+            </a>
+            <a class="docs-action docs-action-docx" href="{docx_url}" download aria-label="{idx_i18n['fmt_docx_aria']}: {title}">
+              <span class="docs-action-icon" aria-hidden="true">DOCX</span>
+              <span class="docs-action-label">DOCX</span>
+            </a>
+            <a class="docs-action docs-action-pdf" href="{pdf_url}" download aria-label="{idx_i18n['fmt_pdf_aria']}: {title}">
+              <span class="docs-action-icon" aria-hidden="true">PDF</span>
+              <span class="docs-action-label">PDF</span>
+            </a>
+          </div>
+        </article>"""
+
+    # Lang niedostepny: link do dostepnych jako fallback
+    avail = ", ".join(LANG_NAMES[L] for L in doc.langs)
+    fallback_links = " · ".join(
+        f'<a class="docs-card-fallback" href="../{doc.phase}/{doc.slug}/{L}/index.html">{LANG_NAMES[L]}</a>'
+        for L in doc.langs
+    )
+    return f"""        <article class="docs-card docs-card-na" data-phase="{doc.phase}" data-slug="{doc.slug}">
+          <h3 class="docs-card-title">{title}</h3>
+          <p class="docs-card-na-msg">{idx_i18n['available_only']} {avail}</p>
+          <div class="docs-card-actions">{fallback_links}</div>
+        </article>"""
+
+
+def build_phase_section(phase: str, lang: str, all_docs: list, idx_i18n: dict) -> str:
+    """Sekcja dla jednej fazy (B1 / B2 / B3) z listing kart dokumentow."""
+    section_label = SECTION_LABELS[phase][lang]
+    phase_docs = [d for d in all_docs if d.phase == phase]
+    if not phase_docs:
+        return ""
+    cards = "\n".join(build_doc_card(d, lang, idx_i18n) for d in phase_docs)
+    intro_key = f"phase_intro_{phase.lower()}"
+    intro = idx_i18n.get(intro_key, "")
+    return f"""    <section class="docs-phase" id="phase-{phase.lower()}" aria-labelledby="phase-{phase.lower()}-h">
+      <header class="docs-phase-header">
+        <h2 id="phase-{phase.lower()}-h" class="docs-phase-title">{phase}: {section_label}</h2>
+        <p class="docs-phase-intro">{intro}</p>
+      </header>
+      <div class="docs-list">
+{cards}
+      </div>
+    </section>"""
+
+
+def build_dokumenty_index(out_root: Path, all_docs: list) -> None:
+    """Generuje 4 strony indeksu per jezyk + root dokumenty/index.html (JS redirect)."""
+    for lang in ("pl", "en", "es", "uk"):
+        idx_i18n = INDEX_I18N[lang]
+        phases = "\n".join(
+            build_phase_section(phase, lang, all_docs, idx_i18n)
+            for phase in ("B1", "B2", "B3")
+        )
+        lang_switch = build_index_lang_switch(lang, idx_i18n["page_lang_aria"])
+        page = INDEX_TEMPLATE.format(
+            lang=lang,
+            title=idx_i18n["title"],
+            intro=idx_i18n["intro"],
+            phases_html=phases,
+            lang_switch_html=lang_switch,
+            back_to_hub=idx_i18n["back_to_hub"],
+        )
+        out_dir = out_root / lang
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / "index.html").write_text(page, encoding="utf-8")
+    (out_root / "index.html").write_text(INDEX_REDIRECT, encoding="utf-8")
+
+
 def write_dokument_css(out_assets: Path) -> None:
     """Pisze dodatkowy CSS dla podstron dokumentów (sekcja downloads + meta).
 
@@ -639,6 +866,161 @@ def write_dokument_css(out_assets: Path) -> None:
 }
 """
     (out_assets / "dokument.css").write_text(css, encoding="utf-8")
+
+
+def write_dokumenty_index_css(out_assets: Path) -> None:
+    """CSS dla strony indeksu dokumenty/{lang}/index.html (kart per dokument, layout listy)."""
+    out_assets.mkdir(parents=True, exist_ok=True)
+    css = """/* dokumenty-index.css: layout strony indeksu dokumentow Pakietu B. */
+
+.docs-intro {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  color: var(--ink-muted, #5a574e);
+  line-height: 1.55;
+  max-width: 65ch;
+}
+
+.docs-phase {
+  margin: 2.5rem 0 1.5rem;
+}
+.docs-phase + .docs-phase {
+  border-top: 1px solid var(--rule, #d9d4c5);
+  padding-top: 1.5rem;
+}
+.docs-phase-header {
+  margin-bottom: 1.25rem;
+}
+.docs-phase-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  color: var(--ink, #1c1b17);
+}
+.docs-phase-intro {
+  font-size: 0.9375rem;
+  color: var(--ink-muted, #5a574e);
+  margin: 0;
+  line-height: 1.55;
+  max-width: 65ch;
+}
+
+.docs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.docs-card {
+  border: 1px solid var(--rule, #d9d4c5);
+  border-radius: 4px;
+  padding: 1.1rem 1.2rem 1.2rem;
+  background: var(--paper, #fbfaf6);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.docs-card:hover {
+  border-color: var(--accent, #7a3b1a);
+}
+.docs-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.7rem;
+  line-height: 1.35;
+  color: var(--ink, #1c1b17);
+}
+.docs-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.docs-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--rule, #d9d4c5);
+  border-radius: 3px;
+  text-decoration: none;
+  color: var(--ink, #1c1b17);
+  font-size: 0.85rem;
+  background: var(--bg, #f6f4ef);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.docs-action:hover,
+.docs-action:focus-visible {
+  background: var(--paper, #fbfaf6);
+  border-color: var(--accent, #7a3b1a);
+}
+.docs-action:focus-visible {
+  outline: 2px solid var(--accent, #7a3b1a);
+  outline-offset: 2px;
+}
+.docs-action-icon {
+  display: inline-block;
+  padding: 0.15rem 0.4rem;
+  background: var(--accent, #7a3b1a);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+}
+.docs-action-html .docs-action-icon {
+  background: var(--ink, #1c1b17);
+}
+.docs-action-label {
+  font-size: 0.875rem;
+}
+
+.docs-card-na {
+  background: transparent;
+  opacity: 0.85;
+}
+.docs-card-na .docs-card-title {
+  color: var(--ink-muted, #5a574e);
+}
+.docs-card-na-msg {
+  font-size: 0.85rem;
+  color: var(--ink-muted, #5a574e);
+  margin: 0 0 0.6rem;
+}
+.docs-card-fallback {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--rule, #d9d4c5);
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--ink, #1c1b17);
+  font-size: 0.8rem;
+  margin-right: 0.3rem;
+}
+.docs-card-fallback:hover {
+  border-color: var(--accent, #7a3b1a);
+}
+
+@media (max-width: 640px) {
+  .docs-list {
+    grid-template-columns: 1fr;
+  }
+  .docs-card-actions {
+    flex-direction: column;
+  }
+  .docs-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media print {
+  .docs-card-actions,
+  .doc-lang-switch {
+    display: none !important;
+  }
+}
+"""
+    (out_assets / "dokumenty-index.css").write_text(css, encoding="utf-8")
 
 
 # =====================================================================
@@ -811,7 +1193,9 @@ def main() -> int:
     print(f"  FORCE_REBUILD: {FORCE_REBUILD}")
     print()
 
-    write_dokument_css(WEB_HUB / "public" / "kurs-tartak" / "assets")
+    assets_dir = WEB_HUB / "public" / COURSE_HUB_SLUG / "assets"
+    write_dokument_css(assets_dir)
+    write_dokumenty_index_css(assets_dir)
 
     counters = {"built_html": 0, "built_docx": 0, "built_pdf": 0,
                 "skipped_html": 0, "skipped_docx": 0, "skipped_pdf": 0,
@@ -828,6 +1212,16 @@ def main() -> int:
             except Exception as exc:
                 print(f"  ERROR [{doc.phase}/{doc.slug}/{lang}]: {exc}", file=sys.stderr)
                 counters["errors"] += 1
+
+    if counters["errors"] == 0:
+        print()
+        print("Building documents index...")
+        try:
+            build_dokumenty_index(OUT_ROOT, docs_to_build)
+            print(f"  OK: dokumenty/{{pl,en,es,uk}}/index.html + root dokumenty/index.html (redirect)")
+        except Exception as exc:
+            print(f"  ERROR: build_dokumenty_index failed: {exc}", file=sys.stderr)
+            counters["errors"] += 1
 
     print()
     print("== Podsumowanie ==")
