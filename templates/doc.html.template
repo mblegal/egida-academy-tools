@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f6f4ef">
+<meta name="page-context" content="{section_anchor}/{doc_label}">
+<title>{title} · Kurs tartakowy EGIDA</title>
+<link rel="stylesheet" href="{assets_prefix}assets/egida.css">
+<link rel="icon" type="image/png" href="{assets_prefix}assets/egida-logo-64.png">
+</head>
+<body>
+<div class="doc-wrap">
+  <header class="doc-header">
+    <a class="doc-logo" href="{hub_prefix}index.html" title="Powrót do hubu Fundacji EGIDA">
+      <img src="{assets_prefix}assets/egida-logo-wide-128.png" alt="Logo Fundacji EGIDA">
+    </a>
+    <div class="doc-header-body">
+      <div class="doc-breadcrumb">
+        <a href="{hub_prefix}index.html">Kurs tartakowy EGIDA</a> /
+        <a href="{hub_prefix}index.html#{section_anchor}">{section}</a> /
+        {doc_label}
+      </div>
+      <h1 class="doc-title">{title}</h1>
+    </div>
+    {lang_switch_html}
+  </header>
+
+  <main class="doc-content">
+    {content}
+  </main>
+
+  {prev_next_html}
+
+  <footer class="doc-footer">
+    <span class="egida-mark">Fundacja EGIDA · Kurs „Praca w tartaku"</span>
+    <a href="{hub_prefix}index.html">← Powrót do menu kursu</a>
+  </footer>
+</div>
+<script src="{assets_prefix}assets/chrome.js"></script>
+</body>
+</html>
