@@ -759,22 +759,22 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#f6f4ef">
-<meta name="page-context" content="dokumenty/{lang}">
+<meta name="page-context" content="dokumenty/operacyjne/{lang}">
 <title>{title} · Kurs tartakowy EGIDA</title>
-<link rel="stylesheet" href="../../assets/egida.css">
-<link rel="stylesheet" href="../../assets/dokument.css">
-<link rel="stylesheet" href="../../assets/dokumenty-index.css">
-<link rel="icon" type="image/png" href="../../assets/egida-logo-64.png">
+<link rel="stylesheet" href="../../../assets/egida.css">
+<link rel="stylesheet" href="../../../assets/dokument.css">
+<link rel="stylesheet" href="../../../assets/dokumenty-index.css">
+<link rel="icon" type="image/png" href="../../../assets/egida-logo-64.png">
 </head>
 <body>
 <div class="doc-wrap">
   <header class="doc-header">
-    <a class="doc-logo" href="../../index.html" title="{back_to_hub}">
-      <img src="../../assets/egida-logo-wide-128.png" alt="Logo Fundacji EGIDA">
+    <a class="doc-logo" href="../../../index.html" title="{back_to_hub}">
+      <img src="../../../assets/egida-logo-wide-128.png" alt="Logo Fundacji EGIDA">
     </a>
     <div class="doc-header-body">
       <div class="doc-breadcrumb">
-        <a href="../../index.html">Kurs tartakowy EGIDA</a> /
+        <a href="../../../index.html">Kurs tartakowy EGIDA</a> /
         {title}
       </div>
       <h1 class="doc-title">{title}</h1>
@@ -789,10 +789,10 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 
   <footer class="doc-footer">
     <span class="egida-mark">Fundacja EGIDA · Kurs „Praca w tartaku"</span>
-    <a href="../../index.html">{back_to_hub}</a>
+    <a href="../../../index.html">{back_to_hub}</a>
   </footer>
 </div>
-<script src="../../assets/chrome.js"></script>
+<script src="../../../assets/chrome.js"></script>
 </body>
 </html>
 """
