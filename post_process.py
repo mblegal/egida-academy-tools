@@ -78,6 +78,13 @@ print(f"STEP 1: usunieto {em_total} em-dashow z {files_modified} plikow")
 BANNER_HTML = """
 <!-- EGIDA hub return banner (injected) -->
 <style id="egida-banner-style">
+  body { padding-top: 88px !important; }
+  @media (max-width: 640px) {
+    body { padding-top: 64px !important; }
+  }
+  /* Reveal.js prezentacja: nie modyfikujemy body padding, banner i tak fixed top-right */
+  body:has(.reveal) { padding-top: 0 !important; }
+  html:has(.reveal) { padding-top: 0 !important; }
   #egida-banner {
     position: fixed;
     top: 14px;
